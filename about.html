@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About | Serotine Services</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --char: #1c2118;
+    --forest: #2c3527;
+    --moss: #4a5940;
+    --parchment: #f1ecdf;
+    --ember: #b5551f;
+    --gold: #b8862c;
+    --line: rgba(241,236,223,0.14);
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body { background: var(--char); color: var(--parchment); font-family: 'Source Sans 3', sans-serif; line-height: 1.6; }
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 500; letter-spacing: -0.01em; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 900px; margin: 0 auto; padding: 0 28px; }
+
+  header { position: sticky; top: 0; z-index: 20; background: rgba(28,33,24,0.92); backdrop-filter: blur(6px); border-bottom: 1px solid var(--line); }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; height: 64px; max-width: 1040px; }
+  .logo { font-family: 'Fraunces', serif; font-size: 1.15rem; }
+  .logo em { font-style: italic; color: var(--gold); }
+  nav ul { display: flex; gap: 28px; list-style: none; font-size: 0.95rem; }
+  nav a:hover { color: var(--gold); }
+  nav a.active { color: var(--gold); }
+
+  .intro { padding: 88px 0 56px; border-bottom: 1px solid var(--line); }
+  .intro .eyebrow { color: var(--moss); font-size: 0.95rem; margin-bottom: 16px; }
+  .intro h1 { font-size: clamp(2rem, 5vw, 3rem); max-width: 20ch; line-height: 1.15; margin-bottom: 22px; }
+  .intro p { font-size: 1.1rem; color: #d7d1c1; max-width: 58ch; }
+
+  .stories { padding: 64px 0; border-bottom: 1px solid var(--line); }
+  .stories > .wrap > h2 { font-size: 1.5rem; margin-bottom: 40px; }
+  .story { display: grid; grid-template-columns: 140px 1fr; gap: 28px; padding: 32px 0; border-top: 1px solid var(--line); }
+  .story:first-of-type { border-top: none; padding-top: 0; }
+  .story .stat { font-family: 'Fraunces', serif; font-size: 1.7rem; color: var(--gold); line-height: 1.2; }
+  .story .stat span { display: block; font-family: 'Source Sans 3', sans-serif; font-size: 0.8rem; color: #b9b3a2; margin-top: 6px; font-weight: 500; }
+  .story h3 { font-size: 1.2rem; margin-bottom: 10px; }
+  .story p { color: #cfc9b8; font-size: 1rem; max-width: 60ch; }
+
+  .creds { padding: 64px 0; }
+  .creds > .wrap > h2 { font-size: 1.5rem; margin-bottom: 8px; }
+  .creds > .wrap > p.sub { color: #b9b3a2; margin-bottom: 36px; }
+  .cred-group { margin-bottom: 32px; }
+  .cred-group h4 { font-size: 0.85rem; color: var(--moss); margin-bottom: 14px; }
+  .cred-list { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  .cred { border-left: 2px solid var(--gold); padding-left: 14px; }
+  .cred.progress { border-left-color: #6b6455; }
+  .cred h5 { font-family: 'Fraunces', serif; font-size: 1rem; margin-bottom: 3px; }
+  .cred p { font-size: 0.88rem; color: #b9b3a2; }
+  .new-tag { display: inline-block; background: var(--ember); color: var(--parchment); font-size: 0.7rem; padding: 2px 8px; border-radius: 10px; margin-left: 8px; vertical-align: middle; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 0.85rem; color: #8a8474; max-width: 1040px; margin: 0 auto; }
+
+  @media (max-width: 640px) {
+    nav ul { display: none; }
+    .story { grid-template-columns: 1fr; gap: 10px; }
+    .cred-list { grid-template-columns: 1fr; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">Serotine <em>Services</em></div>
+    <nav>
+      <ul>
+        <li><a href="index.html#services">Services</a></li>
+        <li><a href="about.html" class="active">About</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<section class="intro">
+  <div class="wrap">
+    <p class="eyebrow">About</p>
+    <h1>22 years of making government programs work for the people who use them</h1>
+    <p>I've spent my career at the point where policy, technology, and people meet, usually because something there has stopped working. Here's some of what that's looked like.</p>
+  </div>
+</section>
+
+<section class="stories">
+  <div class="wrap">
+    <h2>A few stories</h2>
+
+    <div class="story">
+      <div class="stat">4<span>platforms, solo</span></div>
+      <div>
+        <h3>Running four federal platforms alone during a government furlough</h3>
+        <p>When staffing dropped to nearly nothing, I kept four federal platforms running by building my own AI-assisted support tools in a single afternoon, about four and a half hours of setup. The result was an 87 to 100% ticket resolution rate across all four platforms while running solo. It became the real-world case study for my graduate capstone on AI's role in program management.</p>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="stat">$200M+<span>9 contracts</span></div>
+      <div>
+        <h3>Leading a $200M+ portfolio as Lead COR</h3>
+        <p>I serve as Lead Contracting Officer's Representative across a Class A program portfolio spanning nine contracts, including Data.gov, the PX Contact Center, Search.gov, and Vote.gov. That means holding the line between what a contract says on paper and what the program actually needs to deliver, day to day, across teams that don't always agree on either.</p>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="stat">~10<span>years, Recreation.gov</span></div>
+      <div>
+        <h3>Nearly a decade on Recreation.gov</h3>
+        <p>Before GSA, I spent close to ten years managing Recreation.gov at the USDA Forest Service, a platform used by millions of people to book campsites, permits, and public land access. It's where I learned that a government platform succeeding or failing is rarely a technology problem first. It's almost always a people and process problem wearing a technology costume.</p>
+      </div>
+    </div>
+
+    <div class="story">
+      <div class="stat">CDO<span>Council</span></div>
+      <div>
+        <h3>Repositioning Data.gov for the CDO Council</h3>
+        <p>I presented a survey-driven strategy to the federal CDO Council that reframed Data.gov's role: not a mandate to comply with, but a support partner agencies actually want to work with. Shifting that relationship required as much stakeholder diplomacy as data strategy, and it's the kind of work I find most satisfying.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="creds">
+  <div class="wrap">
+    <h2>Certifications &amp; education</h2>
+    <p class="sub">Currently held, plus what I'm working toward next.</p>
+
+    <div class="cred-group">
+      <h4>Held</h4>
+      <div class="cred-list">
+        <div class="cred"><h5>Certified Scrum Product Owner (CSPO) <span class="new-tag">New</span></h5><p>Completed September 2026</p></div>
+        <div class="cred"><h5>FAC-P/PM Senior Level III</h5><p>Federal Acquisition Certification, Program &amp; Project Management</p></div>
+        <div class="cred"><h5>Senior Level III COR</h5><p>Contracting Officer's Representative Certification</p></div>
+        <div class="cred"><h5>DITAP Certified, 2026</h5><p>Digital IT Acquisition Professional Program</p></div>
+        <div class="cred"><h5>MS, Organizational Leadership</h5><p>IT Program Management focus. Distinguished Scholar, CSU Global, 2025</p></div>
+        <div class="cred"><h5>Special Act Award, 2025</h5><p>Stakeholder Coordination Excellence, Mission-Critical Program Onboarding</p></div>
+      </div>
+    </div>
+
+    <div class="cred-group">
+      <h4>In progress</h4>
+      <div class="cred-list">
+        <div class="cred progress"><h5>DAMA CDMP</h5><p>Certified Data Management Professional</p></div>
+        <div class="cred progress"><h5>PMP</h5><p>Project Management Professional</p></div>
+        <div class="cred progress"><h5>Agile Certified Practitioner</h5><p>PMI-ACP</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Serotine Services &middot; Independent Consulting Services</div>
+</footer>
+
+</body>
+</html>

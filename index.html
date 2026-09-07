@@ -5,967 +5,284 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Serotine Services | Independent Consulting Services</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --navy: #0d1f3c;
-    --navy-mid: #1a3260;
-    --gold: #b8963e;
-    --gold-light: #d4ae62;
-    --cream: #f7f4ef;
-    --slate: #4a5568;
-    --rule: #c8bfae;
-    --white: #ffffff;
+    --char: #1c2118;
+    --forest: #2c3527;
+    --moss: #4a5940;
+    --parchment: #f1ecdf;
+    --ember: #b5551f;
+    --gold: #b8862c;
+    --line: rgba(241,236,223,0.14);
   }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
-
   body {
-    font-family: 'DM Sans', sans-serif;
-    font-weight: 300;
-    color: var(--navy);
-    background: var(--cream);
-    font-size: 16px;
-    line-height: 1.7;
+    background: var(--char);
+    color: var(--parchment);
+    font-family: 'Source Sans 3', sans-serif;
+    line-height: 1.55;
   }
+  h1, h2, h3 { font-family: 'Fraunces', serif; font-weight: 500; letter-spacing: -0.01em; }
+  a { color: inherit; text-decoration: none; }
+  .wrap { max-width: 1040px; margin: 0 auto; padding: 0 28px; }
 
-  /* NAV */
-  nav {
-    position: fixed;
-    top: 0; left: 0; right: 0;
-    z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 1.25rem 4rem;
-    background: rgba(13,31,60,0.97);
-    border-bottom: 1px solid rgba(184,150,62,0.3);
+  header {
+    position: sticky; top: 0; z-index: 20;
+    background: rgba(28,33,24,0.92);
+    backdrop-filter: blur(6px);
+    border-bottom: 1px solid var(--line);
   }
-  .nav-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 600;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-  }
-  .nav-links { display: flex; gap: 2.5rem; list-style: none; }
-  .nav-links a {
-    font-size: 0.73rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    color: rgba(247,244,239,0.7);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .nav-links a:hover { color: var(--gold-light); }
+  header .wrap { display: flex; justify-content: space-between; align-items: center; height: 64px; }
+  .logo { font-family: 'Fraunces', serif; font-size: 1.15rem; }
+  .logo em { font-style: italic; color: var(--gold); }
+  nav ul { display: flex; gap: 28px; list-style: none; font-size: 0.95rem; }
+  nav a:hover { color: var(--gold); }
 
-  /* HERO */
-  .hero {
-    min-height: 100vh;
-    background: var(--navy);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: relative;
-    overflow: hidden;
-    padding: 8rem 4rem 5rem;
-  }
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: -20%; right: -10%;
-    width: 60%; height: 120%;
-    background: radial-gradient(ellipse at center, rgba(26,50,96,0.8) 0%, transparent 70%);
-    pointer-events: none;
-  }
-  .hero::after {
-    content: '';
-    position: absolute;
-    bottom: 0; left: 0; right: 0;
-    height: 1px;
-    background: linear-gradient(90deg, transparent, var(--gold), transparent);
-  }
-  .hero-content {
-    max-width: 820px;
-    position: relative;
-    z-index: 2;
-    animation: fadeUp 0.9s ease both;
-  }
-  .hero-eyebrow {
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    gap: 1rem;
-  }
-  .hero-eyebrow::before {
-    content: '';
-    display: inline-block;
-    width: 40px; height: 1px;
-    background: var(--gold);
-  }
-  .hero h1 {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(2.8rem, 5.5vw, 5rem);
-    font-weight: 600;
-    color: var(--white);
-    line-height: 1.05;
-  }
-  .hero h1 em { font-style: italic; color: var(--gold-light); }
+  .hero { padding: 96px 0 64px; border-bottom: 1px solid var(--line); }
+  .hero .eyebrow { color: var(--moss); font-size: 0.95rem; margin-bottom: 18px; max-width: 30ch; }
+  .hero h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); max-width: 16ch; line-height: 1.12; margin-bottom: 22px; }
+  .hero p.lede { font-size: 1.15rem; max-width: 46ch; color: #d7d1c1; margin-bottom: 40px; }
 
-  .hero-tagline {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-    font-style: italic;
-    color: rgba(247,244,239,0.6);
-    margin-top: 1rem;
-    margin-bottom: 2.5rem;
-    max-width: 580px;
-  }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 8px; }
+  .stat .num { font-family: 'Fraunces', serif; font-size: 1.9rem; color: var(--gold); }
+  .stat .label { font-size: 0.85rem; color: #b9b3a2; margin-top: 4px; }
 
-  /* Degree callout */
-  .hero-degree {
-    display: inline-flex;
-    align-items: flex-start;
-    gap: 1.25rem;
-    padding: 1.25rem 1.75rem;
-    border: 1px solid rgba(184,150,62,0.35);
-    background: rgba(184,150,62,0.07);
-    margin-bottom: 2.5rem;
-    max-width: 600px;
-  }
-  .degree-icon {
-    font-size: 1.4rem;
-    color: var(--gold);
-    padding-top: 0.1rem;
-    flex-shrink: 0;
-  }
-  .degree-text {}
-  .degree-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--gold-light);
-    line-height: 1.2;
-  }
-  .degree-sub {
-    font-size: 0.78rem;
-    color: rgba(247,244,239,0.55);
-    margin-top: 0.2rem;
-    letter-spacing: 0.04em;
-  }
-  .degree-proof {
-    font-size: 0.8rem;
-    color: rgba(247,244,239,0.45);
-    margin-top: 0.5rem;
-    font-style: italic;
-    line-height: 1.5;
-  }
+  .belief { padding: 56px 0; border-bottom: 1px solid var(--line); background: var(--forest); }
+  .belief p { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 400; max-width: 42ch; line-height: 1.4; }
 
-  .hero-stats {
-    display: flex;
-    gap: 3rem;
-    padding-top: 2rem;
-    border-top: 1px solid rgba(184,150,62,0.2);
-  }
-  .stat-num {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 2.4rem;
-    font-weight: 700;
-    color: var(--gold-light);
-    line-height: 1;
-  }
-  .stat-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: rgba(247,244,239,0.45);
-    margin-top: 0.3rem;
-  }
+  section.services { padding: 80px 0; }
+  .services > .wrap > h2 { font-size: 1.9rem; margin-bottom: 8px; }
+  .services > .wrap > p { color: #b9b3a2; max-width: 52ch; margin-bottom: 44px; }
 
-  /* SHARED SECTION */
-  section { padding: 7rem 4rem; }
-  .section-label {
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.22em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
+  .cat-label { font-size: 0.85rem; color: var(--gold); margin: 40px 0 16px; }
+  .cat-label:first-of-type { margin-top: 0; }
+  .cards { display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .card {
+    border: 1px solid var(--line); border-radius: 4px; padding: 24px;
+    display: flex; flex-direction: column; gap: 14px;
   }
-  .section-label::after {
-    content: '';
-    display: inline-block;
-    width: 30px; height: 1px;
-    background: var(--gold);
-  }
-  .section-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: clamp(1.9rem, 3.5vw, 3rem);
-    font-weight: 600;
-    color: var(--navy);
-    line-height: 1.15;
-  }
+  .card .kind { font-size: 0.8rem; color: var(--moss); }
+  .card h3 { font-size: 1.1rem; }
+  .card p { font-size: 0.95rem; color: #cfc9b8; }
+  .card ul { font-size: 0.88rem; color: #b9b3a2; padding-left: 18px; }
+  .card .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: baseline; padding-top: 10px; border-top: 1px solid var(--line); }
+  .card .time { font-size: 0.85rem; }
+  .card .time b { color: var(--parchment); font-family: 'Fraunces', serif; font-size: 1rem; }
+  .card .inquire { font-size: 0.85rem; color: var(--gold); }
 
-  /* SERVICE MENU */
-  .menu {
-    background: var(--white);
-  }
-  .menu-header {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
-    align-items: end;
-    margin-bottom: 5rem;
-  }
-  .menu-header p {
-    font-size: 0.95rem;
-    color: var(--slate);
-    line-height: 1.8;
-  }
+  .about { padding: 80px 0; border-top: 1px solid var(--line); background: var(--forest); }
+  .about h2 { font-size: 1.9rem; margin-bottom: 24px; max-width: 20ch; }
+  .about .lede { font-size: 1.1rem; color: #d7d1c1; max-width: 56ch; margin-bottom: 20px; }
+  .about p.body { max-width: 62ch; color: #cfc9b8; margin-bottom: 16px; }
 
-  /* Category tabs */
-  .menu-categories {
-    display: flex;
-    gap: 0;
-    border-bottom: 1px solid var(--rule);
-    margin-bottom: 0;
-  }
-  .cat-tab {
-    padding: 0.85rem 1.75rem;
-    font-size: 0.72rem;
-    font-weight: 500;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--slate);
-    cursor: pointer;
-    border-bottom: 2px solid transparent;
-    margin-bottom: -1px;
-    transition: color 0.2s, border-color 0.2s;
-    background: none;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    font-family: 'DM Sans', sans-serif;
-  }
-  .cat-tab:hover { color: var(--navy); }
-  .cat-tab.active {
-    color: var(--navy);
-    border-bottom-color: var(--gold);
-  }
+  .creds { margin-top: 48px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
+  .cred { border-left: 2px solid var(--gold); padding-left: 16px; }
+  .cred h4 { font-family: 'Fraunces', serif; font-size: 1.05rem; margin-bottom: 4px; }
+  .cred p { font-size: 0.9rem; color: #b9b3a2; }
 
-  .menu-panel { display: none; }
-  .menu-panel.active { display: block; }
+  .contact { padding: 80px 0 100px; }
+  .contact h2 { font-size: 1.9rem; margin-bottom: 16px; }
+  .contact .lede { color: #cfc9b8; max-width: 52ch; margin-bottom: 40px; }
+  .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 44px; }
+  .contact-grid h4 { font-size: 0.85rem; color: var(--moss); margin-bottom: 8px; }
+  .contact-grid p { font-size: 0.95rem; }
+  .cta {
+    display: inline-block; background: var(--ember); color: var(--parchment);
+    padding: 14px 28px; border-radius: 3px; font-size: 0.95rem;
+  }
+  footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 0.85rem; color: #8a8474; }
 
-  /* Service rows */
-  .service-row {
-    display: grid;
-    grid-template-columns: 2fr 2.5fr 1fr;
-    gap: 2rem;
-    align-items: start;
-    padding: 2.5rem 0;
-    border-bottom: 1px solid var(--rule);
-    transition: background 0.2s;
-  }
-  .service-row:first-child { border-top: none; }
-  .service-row:hover { background: var(--cream); margin: 0 -2rem; padding-left: 2rem; padding-right: 2rem; }
-
-  .service-name {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.35rem;
-    font-weight: 600;
-    color: var(--navy);
-    line-height: 1.2;
-    margin-bottom: 0.5rem;
-  }
-  .service-type {
-    display: inline-block;
-    font-size: 0.65rem;
-    letter-spacing: 0.13em;
-    text-transform: uppercase;
-    color: var(--gold);
-    border: 1px solid rgba(184,150,62,0.4);
-    padding: 0.2rem 0.6rem;
-    margin-top: 0.4rem;
-  }
-  .service-desc {
-    font-size: 0.9rem;
-    color: var(--slate);
-    line-height: 1.75;
-  }
-  .service-deliverables {
-    margin-top: 0.75rem;
-    display: flex;
-    flex-direction: column;
-    gap: 0.3rem;
-  }
-  .service-deliverables span {
-    font-size: 0.75rem;
-    color: var(--slate);
-    padding-left: 0.9rem;
-    position: relative;
-  }
-  .service-deliverables span::before {
-    content: '';
-    position: absolute;
-    left: 0; top: 0.55em;
-    width: 5px; height: 1px;
-    background: var(--gold);
-  }
-  .service-meta {
-    text-align: right;
-  }
-  .service-duration {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.1rem;
-    font-weight: 600;
-    color: var(--navy);
-  }
-  .service-duration-label {
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-    color: var(--slate);
-    margin-top: 0.2rem;
-  }
-  .service-cta {
-    display: inline-block;
-    margin-top: 1rem;
-    font-size: 0.68rem;
-    font-weight: 500;
-    letter-spacing: 0.12em;
-    text-transform: uppercase;
-    color: var(--gold);
-    text-decoration: none;
-    border-bottom: 1px solid rgba(184,150,62,0.4);
-    padding-bottom: 0.1rem;
-    transition: color 0.2s, border-color 0.2s;
-  }
-  .service-cta:hover { color: var(--navy); border-color: var(--navy); }
-
-  /* ABOUT */
-  .about {
-    background: var(--cream);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 6rem;
-    align-items: start;
-  }
-  .about-text { font-size: 0.95rem; color: var(--slate); line-height: 1.85; }
-  .about-text p + p { margin-top: 1.25rem; }
-
-  .credential {
-    padding: 1.1rem 1.4rem;
-    border-left: 3px solid var(--gold);
-    background: var(--white);
-    margin-bottom: 1rem;
-  }
-  .credential-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.05rem;
-    font-weight: 600;
-    color: var(--navy);
-  }
-  .credential-sub {
-    font-size: 0.75rem;
-    color: var(--slate);
-    margin-top: 0.15rem;
-    letter-spacing: 0.03em;
-  }
-
-  /* MS callout in about */
-  .degree-callout {
-    background: var(--navy);
-    padding: 1.75rem;
-    margin-bottom: 1rem;
-  }
-  .degree-callout-title {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--gold-light);
-    margin-bottom: 0.5rem;
-  }
-  .degree-callout-body {
-    font-size: 0.82rem;
-    color: rgba(247,244,239,0.65);
-    line-height: 1.7;
-  }
-  .degree-callout-proof {
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
-    border-top: 1px solid rgba(184,150,62,0.25);
-    font-size: 0.78rem;
-    color: var(--gold);
-    font-style: italic;
-  }
-
-  /* CONTACT */
-  .contact {
-    background: var(--navy);
-    text-align: center;
-  }
-  .contact .section-label { justify-content: center; color: var(--gold); }
-  .contact .section-label::after { display: none; }
-  .contact .section-label::before { content: ''; display: inline-block; width: 30px; height: 1px; background: var(--gold); }
-  .contact .section-title { color: var(--white); margin: 0 auto 1rem; max-width: 540px; }
-  .contact-sub {
-    font-size: 0.95rem;
-    color: rgba(247,244,239,0.55);
-    max-width: 480px;
-    margin: 0 auto 3rem;
-  }
-  .contact-grid {
-    display: flex;
-    justify-content: center;
-    gap: 1.5px;
-    background: rgba(184,150,62,0.2);
-    max-width: 700px;
-    margin: 0 auto;
-  }
-  .contact-card {
-    flex: 1;
-    background: var(--navy-mid);
-    padding: 2.25rem 1.75rem;
-    text-align: left;
-  }
-  .contact-card-label {
-    font-size: 0.65rem;
-    letter-spacing: 0.18em;
-    text-transform: uppercase;
-    color: var(--gold);
-    margin-bottom: 0.75rem;
-  }
-  .contact-card-value {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: var(--white);
-  }
-  .contact-card-value a {
-    color: var(--white);
-    text-decoration: none;
-    transition: color 0.2s;
-  }
-  .contact-card-value a:hover { color: var(--gold-light); }
-  .contact-card-note {
-    font-size: 0.75rem;
-    color: rgba(247,244,239,0.4);
-    margin-top: 0.4rem;
-  }
-  .contact-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 0.75rem;
-    margin-top: 3rem;
-    padding: 0.9rem 2.25rem;
-    background: transparent;
-    border: 1px solid var(--gold);
-    color: var(--gold-light);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 0.73rem;
-    font-weight: 500;
-    letter-spacing: 0.15em;
-    text-transform: uppercase;
-    text-decoration: none;
-    transition: background 0.25s, color 0.25s;
-  }
-  .contact-btn:hover { background: var(--gold); color: var(--navy); }
-
-  /* FOOTER */
-  footer {
-    background: #070f1e;
-    padding: 1.75rem 4rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    border-top: 1px solid rgba(184,150,62,0.15);
-  }
-  .footer-brand {
-    font-family: 'Cormorant Garamond', serif;
-    font-size: 0.95rem;
-    font-weight: 600;
-    letter-spacing: 0.1em;
-    text-transform: uppercase;
-    color: var(--gold-light);
-  }
-  .footer-note {
-    font-size: 0.68rem;
-    letter-spacing: 0.08em;
-    color: rgba(247,244,239,0.25);
-    text-transform: uppercase;
-  }
-
-  /* ANIMATIONS */
-  @keyframes fadeUp {
-    from { opacity: 0; transform: translateY(24px); }
-    to   { opacity: 1; transform: translateY(0); }
-  }
-  .fade-in {
-    opacity: 0;
-    transform: translateY(18px);
-    transition: opacity 0.6s ease, transform 0.6s ease;
-  }
-  .fade-in.visible { opacity: 1; transform: translateY(0); }
-
-  /* RESPONSIVE */
-  @media (max-width: 900px) {
-    nav { padding: 1rem 1.5rem; }
-    .nav-links { gap: 1.25rem; }
-    section { padding: 5rem 1.5rem; }
-    .hero { padding: 6rem 1.5rem 4rem; }
-    .menu-header { grid-template-columns: 1fr; gap: 2rem; margin-bottom: 3rem; }
-    .service-row { grid-template-columns: 1fr; gap: 1rem; }
-    .service-meta { text-align: left; }
-    .about { grid-template-columns: 1fr; gap: 3rem; }
-    .hero-stats { gap: 1.75rem; flex-wrap: wrap; }
-    .contact-grid { flex-direction: column; }
-    footer { flex-direction: column; gap: 0.75rem; text-align: center; padding: 1.75rem 1.5rem; }
-    .menu-categories { overflow-x: auto; }
-    .cat-tab { white-space: nowrap; }
-  }
-  @media (min-width: 1400px) {
-    section { max-width: 1400px; margin: 0 auto; }
+  @media (max-width: 720px) {
+    nav ul { display: none; }
+    .stats, .cards, .creds, .contact-grid { grid-template-columns: 1fr; }
   }
 </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-brand">Serotine Services</div>
-  <ul class="nav-links">
-    <li><a href="#services">Services</a></li>
-    <li><a href="#about">About</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+<header>
+  <div class="wrap">
+    <div class="logo">Serotine <em>Services</em></div>
+    <nav>
+      <ul>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-<!-- HERO -->
-<section class="hero" id="home">
-  <div class="hero-content">
-    <div class="hero-eyebrow">Independent Consulting Services</div>
-    <h1>Serotine<br><em>Services</em></h1>
-    <p class="hero-tagline">I walk into broken programs and make them work.</p>
-    <p style="font-size:0.78rem; color:rgba(247,244,239,0.38); letter-spacing:0.08em; margin-top:-1.25rem; margin-bottom:2rem; font-style:italic;">Serotine: the lodgepole pine cone that only opens after fire. Built to regenerate what has burned down.</p>
+<section class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Independent Consulting Services</p>
+    <h1>I help government programs move from surviving to thriving.</h1>
+    <p class="lede">So the people who rely on them get something that actually works well. Serotine: the lodgepole pine cone that only opens after fire, built to regenerate what has burned down.</p>
+    <div class="stats">
+      <div class="stat"><div class="num">22+</div><div class="label">Years federal service</div></div>
+      <div class="stat"><div class="num">$200M+</div><div class="label">Portfolio as Lead COR, 9 contracts</div></div>
+      <div class="stat"><div class="num">GS-14</div><div class="label">Senior level</div></div>
+      <div class="stat"><div class="num">DITAP</div><div class="label">Certified, 2026</div></div>
+    </div>
+  </div>
+</section>
 
-    <div class="hero-degree fade-in">
-      <div class="degree-icon">&#9670;</div>
-      <div class="degree-text">
-        <div class="degree-title">MS, Organizational Leadership with IT Program Management Focus</div>
-        <div class="degree-sub">Distinguished Scholar · CSU Global · 2025</div>
-        <div class="degree-proof">Capstone documented solo help desk operations across four federal platforms during a government furlough, achieving 87-100% ticket resolution rates using AI tools built from scratch in 4.5 hours.</div>
+<section class="belief">
+  <div class="wrap">
+    <p>Programs exist to serve the people who rely on them. My job is to build and protect the parts that let a program, and the people behind it, actually thrive, no matter what constraints it's operating under.</p>
+  </div>
+</section>
+
+<section class="services" id="services">
+  <div class="wrap">
+    <h2>A menu of what I can do for your company</h2>
+    <p>Each service below is a discrete, contractable engagement. Some are bounded projects with a defined deliverable. Others are ongoing advisory arrangements. Available to federal, state, and local government agencies, nonprofits, and private sector organizations as a prime or as a sub on larger contract vehicles.</p>
+
+    <p class="cat-label">Program &amp; Product Management</p>
+    <div class="cards">
+      <div class="card">
+        <div class="kind">Retainer or fixed term</div>
+        <h3>Interim Program or Product Manager</h3>
+        <p>Step in as an experienced PM or PO when a program is between leaders, in crisis, or needs senior continuity during a transition.</p>
+        <ul><li>Backlog ownership and sprint facilitation</li><li>Stakeholder communication and status reporting</li><li>Transition documentation for incoming PM</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>Ongoing / 90-day min</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
+      </div>
+      <div class="card">
+        <div class="kind">Bounded project</div>
+        <h3>Program Assessment and Recovery Plan</h3>
+        <p>A structured diagnostic for programs that are off track, over budget, or losing stakeholder confidence.</p>
+        <ul><li>Program health assessment report</li><li>Root cause analysis</li><li>Prioritized recovery roadmap with milestones</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>4 to 6 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
+      </div>
+      <div class="card">
+        <div class="kind">Bounded project</div>
+        <h3>Product Roadmap Development Sprint</h3>
+        <p>Facilitate a structured process to build or rebuild a product roadmap grounded in user needs, mission, and realistic constraints.</p>
+        <ul><li>Stakeholder interviews and synthesis</li><li>Prioritized backlog with theme-based labeling</li><li>12-month roadmap with quarterly milestones</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>3 to 4 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
+      </div>
+      <div class="card">
+        <div class="kind">Bounded project or retainer</div>
+        <h3>Help Desk and Support Operations Design</h3>
+        <p>Design or restructure a tiered support model for a digital platform or service.</p>
+        <ul><li>Current state assessment</li><li>Tiered support model design</li><li>AI-assisted response workflow</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>4 to 8 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
     </div>
 
-    <div class="hero-stats">
-      <div>
-        <div class="stat-num">22+</div>
-        <div class="stat-label">Years Federal Service</div>
+    <p class="cat-label">Stakeholder &amp; Multi-Agency</p>
+    <div class="cards">
+      <div class="card">
+        <div class="kind">Retainer</div>
+        <h3>Multi-Stakeholder Program Coordination</h3>
+        <p>Ongoing coordination across agencies with competing priorities, schedules, and bureaucratic constraints. Managed programs spanning up to 11 federal agencies.</p>
+        <ul><li>Stakeholder mapping and communication plan</li><li>Decision documentation and escalation management</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>Monthly retainer</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
-      <div>
-        <div class="stat-num">GS-14</div>
-        <div class="stat-label">Senior Level</div>
+      <div class="card">
+        <div class="kind">Bounded project</div>
+        <h3>Stakeholder Alignment Workshop</h3>
+        <p>A facilitated working session to surface competing priorities and produce documented agreements that actually hold.</p>
+        <ul><li>Pre-workshop stakeholder interviews</li><li>Documented agreements and decision log</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>2 to 3 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
-      <div>
-        <div class="stat-num">FAC</div>
-        <div class="stat-label">P/PM Senior III</div>
+      <div class="card">
+        <div class="kind">Bounded project</div>
+        <h3>Program Launch Coordination</h3>
+        <p>End-to-end coordination support for a new program or platform launch across company boundaries.</p>
+        <ul><li>Organization onboarding framework</li><li>Launch readiness checklist and tracking</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>Variable</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
-      <div>
-        <div class="stat-num">DITAP</div>
-        <div class="stat-label">Certified 2026</div>
+    </div>
+
+    <p class="cat-label">Acquisition &amp; Contracting</p>
+    <div class="cards">
+      <div class="card">
+        <div class="kind">Bounded project</div>
+        <h3>Digital Service Acquisition Strategy</h3>
+        <p>DITAP-certified acquisition advisory for agencies procuring digital services, platforms, or software.</p>
+        <ul><li>Market research and landscape analysis</li><li>Contract vehicle recommendation</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>3 to 5 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
+      </div>
+      <div class="card">
+        <div class="kind">Bounded project</div>
+        <h3>SOW and PWS Development</h3>
+        <p>Drafting or reviewing Statements of Work and Performance Work Statements for digital service contracts.</p>
+        <ul><li>Requirements discovery and documentation</li><li>QASP or performance metrics framework</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>2 to 4 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
+      </div>
+      <div class="card">
+        <div class="kind">Retainer or workshop</div>
+        <h3>Agile Acquisition Coaching</h3>
+        <p>Help program and contracting staff structure and manage contracts for agile digital services.</p>
+        <ul><li>Customized training materials</li><li>Ongoing advisory support option</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>Variable</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
+      </div>
+    </div>
+
+    <p class="cat-label">Data &amp; Digital</p>
+    <div class="cards">
+      <div class="card">
+        <div class="kind">Bounded project or retainer</div>
+        <h3>Open Data Strategy and Implementation</h3>
+        <p>Practical guidance on open data policy, DCAT-US standards, and data catalog implementation. Grounded in direct experience managing Data.gov.</p>
+        <ul><li>DCAT-US compliance roadmap</li><li>Data catalog setup and configuration support</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>4 to 8 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
+      </div>
+      <div class="card">
+        <div class="kind">Bounded project</div>
+        <h3>Digital Platform Analytics Setup</h3>
+        <p>Stand up or improve analytics measurement for a government digital platform, covering DAP, GA4, and Looker Studio.</p>
+        <ul><li>Analytics requirements and tagging plan</li><li>Reporting cadence and interpretation guide</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>2 to 4 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
+      </div>
+      <div class="card">
+        <div class="kind">Bounded project or retainer</div>
+        <h3>API Strategy and Developer Engagement</h3>
+        <p>Strategic advisory for agencies managing or planning public APIs, including governance and usage analytics.</p>
+        <ul><li>API governance framework</li><li>Agency onboarding and engagement strategy</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>Variable</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- SERVICE MENU -->
-<section class="menu" id="services">
-  <div class="menu-header fade-in">
-    <div>
-      <div class="section-label">Services</div>
-      <h2 class="section-title">A menu of what I can do for your company</h2>
-    </div>
-    <p>Each service below is a discrete, contractable engagement. Some are bounded projects with a defined deliverable. Others are ongoing advisory arrangements. Available to federal, state, and local government agencies, nonprofits, and private sector organizations.</p>
-  </div>
-
-  <div class="menu-categories fade-in">
-    <button class="cat-tab active" onclick="showPanel('panel-pm', this)">Program &amp; Product Management</button>
-    <button class="cat-tab" onclick="showPanel('panel-stakeholder', this)">Stakeholder &amp; Multi-Agency</button>
-    <button class="cat-tab" onclick="showPanel('panel-acquisition', this)">Acquisition &amp; Contracting</button>
-    <button class="cat-tab" onclick="showPanel('panel-data', this)">Data &amp; Digital</button>
-  </div>
-
-  <!-- PM PANEL -->
-  <div class="menu-panel active" id="panel-pm">
-    <div class="service-row">
-      <div>
-        <div class="service-name">Interim Program or Product Manager</div>
-        <div class="service-type">Retainer or Fixed Term</div>
-      </div>
-      <div class="service-desc">
-        Step in as an experienced PM or PO when a program is between leaders, in crisis, or needs senior continuity during a transition. I can hold the function, stabilize the team, and prepare for a permanent hire.
-        <div class="service-deliverables">
-          <span>Backlog ownership and sprint facilitation</span>
-          <span>Stakeholder communication and status reporting</span>
-          <span>Team stabilization and knowledge transfer</span>
-          <span>Transition documentation for incoming PM</span>
-        </div>
-      </div>
-      <div class="service-meta">
-        <div class="service-duration">Ongoing</div>
-        <div class="service-duration-label">or 90-day minimum</div>
-        <a href="#contact" class="service-cta">Inquire</a>
-      </div>
-    </div>
-    <div class="service-row">
-      <div>
-        <div class="service-name">Program Assessment and Recovery Plan</div>
-        <div class="service-type">Bounded Project</div>
-      </div>
-      <div class="service-desc">
-        A structured diagnostic for programs that are off track, over budget, or losing stakeholder confidence. I assess what is actually happening, identify root causes, and deliver a clear recovery roadmap.
-        <div class="service-deliverables">
-          <span>Program health assessment report</span>
-          <span>Root cause analysis</span>
-          <span>Prioritized recovery roadmap with milestones</span>
-          <span>Executive briefing deck</span>
-        </div>
-      </div>
-      <div class="service-meta">
-        <div class="service-duration">4 to 6</div>
-        <div class="service-duration-label">weeks</div>
-        <a href="#contact" class="service-cta">Inquire</a>
-      </div>
-    </div>
-    <div class="service-row">
-      <div>
-        <div class="service-name">Product Roadmap Development Sprint</div>
-        <div class="service-type">Bounded Project</div>
-      </div>
-      <div class="service-desc">
-        Facilitate a structured process to build or rebuild a product roadmap grounded in user needs, mission, and realistic constraints. Includes backlog organization and prioritization framework.
-        <div class="service-deliverables">
-          <span>Stakeholder interviews and synthesis</span>
-          <span>Prioritized backlog with theme-based labeling</span>
-          <span>12-month roadmap with quarterly milestones</span>
-          <span>Ongoing advisory retainer option</span>
-        </div>
-      </div>
-      <div class="service-meta">
-        <div class="service-duration">3 to 4</div>
-        <div class="service-duration-label">weeks</div>
-        <a href="#contact" class="service-cta">Inquire</a>
-      </div>
-    </div>
-    <div class="service-row">
-      <div>
-        <div class="service-name">Help Desk and Support Operations Design</div>
-        <div class="service-type">Bounded Project or Retainer</div>
-      </div>
-      <div class="service-desc">
-        Design or restructure a tiered support model for a digital platform or service. Includes FAQ-as-a-Service frameworks where program staff retain content ownership while Tier 1 handles volume.
-        <div class="service-deliverables">
-          <span>Current state assessment</span>
-          <span>Tiered support model design</span>
-          <span>Knowledge base and FAQ architecture</span>
-          <span>AI-assisted response workflow</span>
-        </div>
-      </div>
-      <div class="service-meta">
-        <div class="service-duration">4 to 8</div>
-        <div class="service-duration-label">weeks</div>
-        <a href="#contact" class="service-cta">Inquire</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- STAKEHOLDER PANEL -->
-  <div class="menu-panel" id="panel-stakeholder">
-    <div class="service-row">
-      <div>
-        <div class="service-name">Multi-Stakeholder Program Coordination</div>
-        <div class="service-type">Retainer</div>
-      </div>
-      <div class="service-desc">
-        Ongoing coordination across agencies with competing priorities, schedules, and bureaucratic constraints. I have managed programs spanning up to 11 federal agencies and know how to keep disparate stakeholders aligned without creating additional overhead.
-        <div class="service-deliverables">
-          <span>Stakeholder mapping and communication plan</span>
-          <span>Regular coordination cadence facilitation</span>
-          <span>Decision documentation and escalation management</span>
-          <span>Cross-Stakeholder status reporting</span>
-        </div>
-      </div>
-      <div class="service-meta">
-        <div class="service-duration">Ongoing</div>
-        <div class="service-duration-label">monthly retainer</div>
-        <a href="#contact" class="service-cta">Inquire</a>
-      </div>
-    </div>
-    <div class="service-row">
-      <div>
-        <div class="service-name">Stakeholder Alignment Workshop</div>
-        <div class="service-type">Bounded Project</div>
-      </div>
-      <div class="service-desc">
-        A facilitated working session (or series) to surface competing priorities, establish shared goals, and produce documented agreements that actually hold. Especially useful at program launch or when a program has stalled due to misalignment.
-        <div class="service-deliverables">
-          <span>Pre-workshop stakeholder interviews</span>
-          <span>Facilitated session design and delivery</span>
-          <span>Documented agreements and decision log</span>
-          <span>Follow-up accountability structure</span>
-        </div>
-      </div>
-      <div class="service-meta">
-        <div class="service-duration">2 to 3</div>
-        <div class="service-duration-label">weeks</div>
-        <a href="#contact" class="service-cta">Inquire</a>
-      </div>
-    </div>
-    <div class="service-row">
-      <div>
-        <div class="service-name">Program Launch Coordination</div>
-        <div class="service-type">Bounded Project</div>
-      </div>
-      <div class="service-desc">
-        End-to-end coordination support for a new program or platform launch across company boundaries. From onboarding stakeholders through go-live, I manage the coordination layer so your team can focus on delivery.
-        <div class="service-deliverables">
-          <span>Organization onboarding framework</span>
-          <span>Launch readiness checklist and tracking</span>
-          <span>Communication plan and stakeholder updates</span>
-          <span>Post-launch retrospective</span>
-        </div>
-      </div>
-      <div class="service-meta">
-        <div class="service-duration">Variable</div>
-        <div class="service-duration-label">scope dependent</div>
-        <a href="#contact" class="service-cta">Inquire</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ACQUISITION PANEL -->
-  <div class="menu-panel" id="panel-acquisition">
-    <div class="service-row">
-      <div>
-        <div class="service-name">Digital Service Acquisition Strategy</div>
-        <div class="service-type">Bounded Project</div>
-      </div>
-      <div class="service-desc">
-        DITAP-certified acquisition advisory for agencies procuring digital services, platforms, or software. I bridge the gap between technical requirements and contracting language, helping you get a contract vehicle that actually buys what you need.
-        <div class="service-deliverables">
-          <span>Market research and landscape analysis</span>
-          <span>Acquisition strategy memo</span>
-          <span>Contract vehicle recommendation</span>
-          <span>Draft SOW or PWS with performance metrics</span>
-        </div>
-      </div>
-      <div class="service-meta">
-        <div class="service-duration">3 to 5</div>
-        <div class="service-duration-label">weeks</div>
-        <a href="#contact" class="service-cta">Inquire</a>
-      </div>
-    </div>
-    <div class="service-row">
-      <div>
-        <div class="service-name">SOW and PWS Development</div>
-        <div class="service-type">Bounded Project</div>
-      </div>
-      <div class="service-desc">
-        Drafting or reviewing Statements of Work and Performance Work Statements for digital service contracts. Particular strength in performance-based approaches that set vendors up for accountability rather than ambiguity.
-        <div class="service-deliverables">
-          <span>Requirements discovery and documentation</span>
-          <span>Draft SOW or PWS</span>
-          <span>QASP or performance metrics framework</span>
-          <span>Review and revision support through award</span>
-        </div>
-      </div>
-      <div class="service-meta">
-        <div class="service-duration">2 to 4</div>
-        <div class="service-duration-label">weeks</div>
-        <a href="#contact" class="service-cta">Inquire</a>
-      </div>
-    </div>
-    <div class="service-row">
-      <div>
-        <div class="service-name">Agile Acquisition Coaching</div>
-        <div class="service-type">Retainer or Workshop</div>
-      </div>
-      <div class="service-desc">
-        Help program and contracting staff understand how to structure and manage contracts for agile digital services. Covers modular contracting, sprint-based delivery, and how to evaluate vendor performance in an iterative environment.
-        <div class="service-deliverables">
-          <span>Customized training materials</span>
-          <span>Workshop facilitation (in person or remote)</span>
-          <span>Ongoing advisory support option</span>
-        </div>
-      </div>
-      <div class="service-meta">
-        <div class="service-duration">Variable</div>
-        <div class="service-duration-label">workshop or retainer</div>
-        <a href="#contact" class="service-cta">Inquire</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- DATA PANEL -->
-  <div class="menu-panel" id="panel-data">
-    <div class="service-row">
-      <div>
-        <div class="service-name">Open Data Strategy and Implementation</div>
-        <div class="service-type">Bounded Project or Retainer</div>
-      </div>
-      <div class="service-desc">
-        Practical guidance on open data policy, DCAT-US standards, and data catalog implementation. Grounded in direct experience managing Data.gov and shaping federal open data standards at the national level.
-        <div class="service-deliverables">
-          <span>Current state open data assessment</span>
-          <span>DCAT-US compliance roadmap</span>
-          <span>Data catalog setup and configuration support</span>
-          <span>Agency implementer documentation</span>
-        </div>
-      </div>
-      <div class="service-meta">
-        <div class="service-duration">4 to 8</div>
-        <div class="service-duration-label">weeks</div>
-        <a href="#contact" class="service-cta">Inquire</a>
-      </div>
-    </div>
-    <div class="service-row">
-      <div>
-        <div class="service-name">Digital Platform Analytics Setup</div>
-        <div class="service-type">Bounded Project</div>
-      </div>
-      <div class="service-desc">
-        Stand up or improve analytics measurement for a government digital platform. Covers DAP, GA4, and Looker Studio reporting so program teams can actually understand how their platform is being used.
-        <div class="service-deliverables">
-          <span>Analytics requirements and tagging plan</span>
-          <span>Dashboard configuration and documentation</span>
-          <span>Reporting cadence and interpretation guide</span>
-        </div>
-      </div>
-      <div class="service-meta">
-        <div class="service-duration">2 to 4</div>
-        <div class="service-duration-label">weeks</div>
-        <a href="#contact" class="service-cta">Inquire</a>
-      </div>
-    </div>
-    <div class="service-row">
-      <div>
-        <div class="service-name">API Strategy and Developer Engagement</div>
-        <div class="service-type">Bounded Project or Retainer</div>
-      </div>
-      <div class="service-desc">
-        Strategic advisory for agencies managing or planning public APIs. Covers governance, developer documentation standards, usage analytics, and engagement with agency data consumers. Experience with api.data.gov and multi-agency API programs.
-        <div class="service-deliverables">
-          <span>API governance framework</span>
-          <span>Developer documentation assessment</span>
-          <span>Usage analytics and reporting setup</span>
-          <span>Agency onboarding and engagement strategy</span>
-        </div>
-      </div>
-      <div class="service-meta">
-        <div class="service-duration">Variable</div>
-        <div class="service-duration-label">scope dependent</div>
-        <a href="#contact" class="service-cta">Inquire</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ABOUT -->
 <section class="about" id="about">
-  <div>
-    <div class="section-label fade-in">About</div>
-    <h2 class="section-title fade-in">The person you call when it needs to work</h2>
-    <div class="about-text fade-in">
-      <p>Some programs get stuck. The technology exists, but nobody trusts it. The team is capable, but nobody has given them a clear path. The processes were never built, or broke somewhere along the way. That is where I do my best work.</p>
-      <p>I work at the intersection of technology and people, which means I can read a technical schema and run a stakeholder briefing in the same afternoon. Over 20+ years, I have led platform modernizations serving millions of users, rebuilt broken programs during government-wide crises, launched a national digital permit system from scratch in a single season, and briefed senior federal executives on standards I built for their use.</p>
-      <p>This is not limited to the government. I have helped private business owners in massage therapy, native plant landscaping, and specialty retail get their operations and technology working - without needing to be an expert in their field. I figure out what is broken, build what is needed, and make sure it keeps running after I leave. I build capacity in your team, not dependency on my presence.</p>
-    </div>
-  </div>
-  <div class="fade-in">
-    <div class="degree-callout">
-      <div class="degree-callout-title">MS, Organizational Leadership with IT Program Management Focus</div>
-      <div class="degree-callout-body">Distinguished Scholar recognition (GPA 3.75+). My capstone research documented a real federal case study: during a government furlough, I maintained solo help desk operations across four federal platforms using AI tools I built myself, achieving 87 to 100% ticket resolution rates after 4.5 hours of structured AI training.</div>
-      <div class="degree-callout-proof">Assessed as publication-quality by faculty. CSU Global, 2025.</div>
-    </div>
-    <div class="credential">
-      <div class="credential-title">FAC-P/PM Senior Level III</div>
-      <div class="credential-sub">Federal Acquisition Certification in Program and Project Management</div>
-    </div>
-    <div class="credential">
-      <div class="credential-title">Senior Level III COR</div>
-      <div class="credential-sub">Contracting Officer Representative Certification</div>
-    </div>
-    <div class="credential">
-      <div class="credential-title">DITAP Certified · 2026</div>
-      <div class="credential-sub">Digital IT Acquisition Professional Program</div>
-    </div>
-    <div class="credential">
-      <div class="credential-title">Special Act Award · 2025</div>
-      <div class="credential-sub">Stakeholder Coordination Excellence, Mission-Critical Program Onboarding</div>
+  <div class="wrap">
+    <h2>The person you call when it needs to thrive</h2>
+    <p class="lede">Some programs get stuck. The technology exists, but nobody trusts it. The team is capable, but nobody has given them a clear path. That is where I do my best work: not just stabilizing what's broken, but building the conditions for a program to keep getting better after I leave.</p>
+    <p class="body">I work at the intersection of technology and people, which means I can read a technical schema and run a stakeholder briefing in the same afternoon. As Lead COR, I manage a $200M+ portfolio across nine contracts, including Data.gov, the PX Contact Center, Search.gov, and Vote.gov. Over 22+ years, I have led platform modernizations serving millions of users, rebuilt broken programs during government-wide crises, and briefed senior federal executives on standards I helped build.</p>
+    <p class="body">This is not limited to government work performed directly. I also partner as a subcontractor on larger federal contract vehicles, bringing deep program and acquisition expertise to primes who need it. And I've helped private business owners in massage therapy, native plant landscaping, and specialty retail get their operations working, without needing to be an expert in their field. I figure out what is needed, build it, and make sure it keeps running after I leave.</p>
+
+    <div class="creds">
+      <div class="cred"><h4>Lead COR, $200M+ Portfolio</h4><p>Nine contracts spanning Data.gov, PX Contact Center, Search.gov, and Vote.gov</p></div>
+      <div class="cred"><h4>MS, Organizational Leadership</h4><p>IT Program Management focus. Distinguished Scholar, CSU Global, 2025</p></div>
+      <div class="cred"><h4>FAC-P/PM Senior Level III</h4><p>Federal Acquisition Certification in Program and Project Management</p></div>
+      <div class="cred"><h4>Senior Level III COR</h4><p>Contracting Officer Representative Certification</p></div>
+      <div class="cred"><h4>DITAP Certified, 2026</h4><p>Digital IT Acquisition Professional Program</p></div>
+      <div class="cred"><h4>Special Act Award, 2025</h4><p>Stakeholder Coordination Excellence, Mission-Critical Program Onboarding</p></div>
     </div>
   </div>
 </section>
 
-<!-- CONTACT -->
 <section class="contact" id="contact">
-  <div class="section-label fade-in">Get In Touch</div>
-  <h2 class="section-title fade-in">Let's discuss what you're trying to fix</h2>
-  <p class="contact-sub fade-in">Available for government, nonprofit, and private sector engagements. Flexible models include hourly, project-based, and retainer. Remote-first.</p>
-  <div class="contact-grid fade-in">
-    <div class="contact-card">
-      <div class="contact-card-label">Email</div>
-      <div class="contact-card-value"><a href="mailto:strategicstepsforward@gmail.com">strategicstepsforward@gmail.com</a></div>
-      <div class="contact-card-note">Responses within one business day</div>
+  <div class="wrap">
+    <h2>Let's discuss what you're trying to grow</h2>
+    <p class="lede">Available for government, nonprofit, and private sector engagements, as prime or sub. Flexible models include hourly, project-based, and retainer. Remote-first.</p>
+    <div class="contact-grid">
+      <div><h4>Email</h4><p>strategicstepsforward@gmail.com</p><p style="color:#8a8474; font-size:0.85rem; margin-top:4px;">Responses within one business day</p></div>
+      <div><h4>Availability</h4><p>Open to new engagements</p><p style="color:#8a8474; font-size:0.85rem; margin-top:4px;">Bounded projects and retainers</p></div>
+      <div><h4>Location</h4><p>Colorado</p><p style="color:#8a8474; font-size:0.85rem; margin-top:4px;">Remote-first, travel available</p></div>
     </div>
-    <div class="contact-card">
-      <div class="contact-card-label">Availability</div>
-      <div class="contact-card-value">Open to new engagements</div>
-      <div class="contact-card-note">Bounded projects and retainers</div>
-    </div>
-    <div class="contact-card">
-      <div class="contact-card-label">Location</div>
-      <div class="contact-card-value">Colorado</div>
-      <div class="contact-card-note">Remote-first, travel available</div>
-    </div>
+    <a class="cta" href="mailto:strategicstepsforward@gmail.com">Start a Conversation</a>
   </div>
-  <a href="mailto:strategicstepsforward@gmail.com" class="contact-btn fade-in">
-    Start a Conversation
-    <svg width="14" height="14" viewBox="0 0 16 16" fill="none"><path d="M3 8h10M9 4l4 4-4 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
-  </a>
 </section>
 
-<!-- FOOTER -->
 <footer>
-  <div class="footer-brand">Serotine Services</div>
-  <div class="footer-note">Independent Consulting Services</div>
+  <div class="wrap">Serotine Services &middot; Independent Consulting Services</div>
 </footer>
 
-<script>
-  function showPanel(id, tab) {
-    document.querySelectorAll('.menu-panel').forEach(p => p.classList.remove('active'));
-    document.querySelectorAll('.cat-tab').forEach(t => t.classList.remove('active'));
-    document.getElementById(id).classList.add('active');
-    tab.classList.add('active');
-  }
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) entry.target.classList.add('visible');
-    });
-  }, { threshold: 0.1 });
-
-  document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-</script>
 </body>
 </html>

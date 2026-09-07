@@ -129,113 +129,51 @@ layout: null
 
 <section class="services" id="services">
   <div class="wrap">
-    <h2>A menu of what I can do for your company</h2>
-    <p>Each service below is a discrete, contractable engagement. Some are bounded projects with a defined deliverable. Others are ongoing advisory arrangements. Available to federal, state, and local government agencies, nonprofits, and private sector organizations as a prime or as a sub on larger contract vehicles.</p>
+    <h2>Technical depth, not just process</h2>
+    <p>Each service below is grounded in systems I've built and shipped, not a facilitation menu. Available to federal, state, and local government agencies, nonprofits, and private sector organizations, as prime or as a sub on larger contract vehicles.</p>
 
-    <p class="cat-label">Program &amp; Product Management</p>
     <div class="cards">
       <div class="card">
-        <div class="kind">Retainer or fixed term</div>
-        <h3>Interim Program or Product Manager</h3>
-        <p>Step in as an experienced PM or PO when a program is between leaders, in crisis, or needs senior continuity during a transition.</p>
-        <ul><li>Backlog ownership and sprint facilitation</li><li>Stakeholder communication and status reporting</li><li>Transition documentation for incoming PM</li></ul>
-        <div class="foot"><div class="time">Duration<br><b>Ongoing / 90-day min</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
-      </div>
-      <div class="card">
-        <div class="kind">Bounded project</div>
-        <h3>Program Assessment and Recovery Plan</h3>
-        <p>A structured diagnostic for programs that are off track, over budget, or losing stakeholder confidence.</p>
-        <ul><li>Program health assessment report</li><li>Root cause analysis</li><li>Prioritized recovery roadmap with milestones</li></ul>
-        <div class="foot"><div class="time">Duration<br><b>4 to 6 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
-      </div>
-      <div class="card">
-        <div class="kind">Bounded project</div>
-        <h3>Product Roadmap Development Sprint</h3>
-        <p>Facilitate a structured process to build or rebuild a product roadmap grounded in user needs, mission, and realistic constraints.</p>
-        <ul><li>Stakeholder interviews and synthesis</li><li>Prioritized backlog with theme-based labeling</li><li>12-month roadmap with quarterly milestones</li></ul>
-        <div class="foot"><div class="time">Duration<br><b>3 to 4 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
+        <div class="kind">Bounded project or retainer</div>
+        <h3>Data Catalog &amp; Metadata Engineering</h3>
+        <p>Refactored the DCAT-US 3.0 schema after the original shipped incomplete, with broken links and unresolved agency disagreement. Verified all 26 raw JSON schema files by hand, wrote a Python conversion script for the v1.1 to v3.0 migration, and led the catalog.data.gov cutover from legacy CKAN to a new Python/Flask application.</p>
+        <ul><li>Schema design and validation against raw source, not rendered docs</li><li>Migration scripting between metadata versions</li><li>Legacy-to-modern platform cutover</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>4 to 8 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
       <div class="card">
         <div class="kind">Bounded project or retainer</div>
-        <h3>Help Desk and Support Operations Design</h3>
-        <p>Design or restructure a tiered support model for a digital platform or service.</p>
-        <ul><li>Current state assessment</li><li>Tiered support model design</li><li>AI-assisted response workflow</li></ul>
-        <div class="foot"><div class="time">Duration<br><b>4 to 8 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
+        <h3>API Governance &amp; Platform Reliability</h3>
+        <p>Own the Catalog API v4 and Harvester API v2 as the authoritative front door for programmatic data access. Handled a launch-day traffic spike of roughly 400 requests per second with no rate limiting in place, coordinating a fix through api.data.gov.</p>
+        <ul><li>Endpoint governance and versioning strategy</li><li>Usage analytics and capacity planning</li><li>Incident response under live traffic load</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>Variable</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
-    </div>
-
-    <p class="cat-label">Stakeholder &amp; Multi-Agency</p>
-    <div class="cards">
       <div class="card">
         <div class="kind">Retainer</div>
-        <h3>Multi-Stakeholder Program Coordination</h3>
-        <p>Ongoing coordination across agencies with competing priorities, schedules, and bureaucratic constraints. Managed programs spanning up to 11 federal agencies.</p>
-        <ul><li>Stakeholder mapping and communication plan</li><li>Decision documentation and escalation management</li></ul>
+        <h3>Security Monitoring &amp; Incident Response</h3>
+        <p>Run daily operational security monitoring across AWS and cloud.gov, plus New Relic and Snyk alerting beyond native GitHub scanning. Author of record on a formal Incident Response Plan. Caught a secret key committed to a public repo during a 7-repo security review.</p>
+        <ul><li>Alert triage and vulnerability routing</li><li>Incident Response Plan authorship</li><li>Cross-repo security review</li></ul>
         <div class="foot"><div class="time">Duration<br><b>Monthly retainer</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
       <div class="card">
         <div class="kind">Bounded project</div>
-        <h3>Stakeholder Alignment Workshop</h3>
-        <p>A facilitated working session to surface competing priorities and produce documented agreements that actually hold.</p>
-        <ul><li>Pre-workshop stakeholder interviews</li><li>Documented agreements and decision log</li></ul>
-        <div class="foot"><div class="time">Duration<br><b>2 to 3 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
+        <h3>AI-Augmented Operations Engineering</h3>
+        <p>Built and deployed 6 AI-powered helpbots across 4 federal programs in about 2 weeks during a government shutdown, cutting per-ticket resolution time from 10 minutes to 1 minute. Also built a browser-based Q&amp;A tool backed by harvested CSV data and Python error analysis, covering 1,470 errors across 81 sources.</p>
+        <ul><li>Custom AI tooling design and deployment</li><li>Data-backed error analysis scripting</li><li>Tier-based support workflow integration</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>2 to 4 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
       <div class="card">
         <div class="kind">Bounded project</div>
-        <h3>Program Launch Coordination</h3>
-        <p>End-to-end coordination support for a new program or platform launch across company boundaries.</p>
-        <ul><li>Organization onboarding framework</li><li>Launch readiness checklist and tracking</li></ul>
+        <h3>Legacy System Migration</h3>
+        <p>Led the Search.gov migration off legacy search technology, and the catalog.data.gov cutover from CKAN, each while keeping the outgoing system running for dependent users through the transition.</p>
+        <ul><li>Dual-track legacy and modern platform operation</li><li>Cutover sequencing and rollback planning</li><li>Dependent-user continuity through transition</li></ul>
         <div class="foot"><div class="time">Duration<br><b>Variable</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
-    </div>
-
-    <p class="cat-label">Acquisition &amp; Contracting</p>
-    <div class="cards">
       <div class="card">
-        <div class="kind">Bounded project</div>
-        <h3>Digital Service Acquisition Strategy</h3>
-        <p>DITAP-certified acquisition advisory for agencies procuring digital services, platforms, or software.</p>
-        <ul><li>Market research and landscape analysis</li><li>Contract vehicle recommendation</li></ul>
+        <div class="kind">Bounded project or retainer</div>
+        <h3>Technical Acquisition &amp; Contract Structuring</h3>
+        <p>Draft SOO/SOW/PWS documents scoped to actual technical architecture, not boilerplate. Restructured an hours-based BPA across six interagency call orders into a quality-weighted incentive and disincentive pricing model. COR-level oversight of $200M+ in technical program spend across three active contract vehicles.</p>
+        <ul><li>Technically-scoped SOW/PWS drafting</li><li>Incentive-based pricing structure design</li><li>Multi-vehicle contractor coordination</li></ul>
         <div class="foot"><div class="time">Duration<br><b>3 to 5 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
-      </div>
-      <div class="card">
-        <div class="kind">Bounded project</div>
-        <h3>SOW and PWS Development</h3>
-        <p>Drafting or reviewing Statements of Work and Performance Work Statements for digital service contracts.</p>
-        <ul><li>Requirements discovery and documentation</li><li>QASP or performance metrics framework</li></ul>
-        <div class="foot"><div class="time">Duration<br><b>2 to 4 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
-      </div>
-      <div class="card">
-        <div class="kind">Retainer or workshop</div>
-        <h3>Agile Acquisition Coaching</h3>
-        <p>Help program and contracting staff structure and manage contracts for agile digital services.</p>
-        <ul><li>Customized training materials</li><li>Ongoing advisory support option</li></ul>
-        <div class="foot"><div class="time">Duration<br><b>Variable</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
-      </div>
-    </div>
-
-    <p class="cat-label">Data &amp; Digital</p>
-    <div class="cards">
-      <div class="card">
-        <div class="kind">Bounded project or retainer</div>
-        <h3>Open Data Strategy and Implementation</h3>
-        <p>Practical guidance on open data policy, DCAT-US standards, and data catalog implementation. Grounded in direct experience managing Data.gov.</p>
-        <ul><li>DCAT-US compliance roadmap</li><li>Data catalog setup and configuration support</li></ul>
-        <div class="foot"><div class="time">Duration<br><b>4 to 8 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
-      </div>
-      <div class="card">
-        <div class="kind">Bounded project</div>
-        <h3>Digital Platform Analytics Setup</h3>
-        <p>Stand up or improve analytics measurement for a government digital platform, covering DAP, GA4, and Looker Studio.</p>
-        <ul><li>Analytics requirements and tagging plan</li><li>Reporting cadence and interpretation guide</li></ul>
-        <div class="foot"><div class="time">Duration<br><b>2 to 4 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
-      </div>
-      <div class="card">
-        <div class="kind">Bounded project or retainer</div>
-        <h3>API Strategy and Developer Engagement</h3>
-        <p>Strategic advisory for agencies managing or planning public APIs, including governance and usage analytics.</p>
-        <ul><li>API governance framework</li><li>Agency onboarding and engagement strategy</li></ul>
-        <div class="foot"><div class="time">Duration<br><b>Variable</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
     </div>
   </div>

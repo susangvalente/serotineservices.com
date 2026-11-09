@@ -11,13 +11,13 @@ layout: null
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Source+Sans+3:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --char: #1c2118;
-    --forest: #2c3527;
-    --moss: #4a5940;
-    --parchment: #f1ecdf;
-    --ember: #b5551f;
-    --gold: #b8862c;
-    --line: rgba(241,236,223,0.14);
+    --char: #faf8f3;
+    --forest: #eef3ee;
+    --moss: #2f5d3a;
+    --parchment: #1f2a24;
+    --ember: #2f5d3a;
+    --gold: #8a5a2b;
+    --line: rgba(31,42,36,0.15);
   }
   * { margin: 0; padding: 0; box-sizing: border-box; }
   html { scroll-behavior: smooth; }
@@ -33,31 +33,31 @@ layout: null
 
   header {
     position: sticky; top: 0; z-index: 20;
-    background: rgba(28,33,24,0.92);
+    background: rgba(250,248,243,0.95);
     backdrop-filter: blur(6px);
     border-bottom: 1px solid var(--line);
   }
   header .wrap { display: flex; justify-content: space-between; align-items: center; height: 64px; }
   .logo { font-family: 'Fraunces', serif; font-size: 1.15rem; }
-  .logo em { font-style: italic; color: var(--gold); }
+  .logo em { font-style: italic; color: var(--moss); }
   nav ul { display: flex; gap: 28px; list-style: none; font-size: 0.95rem; }
   nav a:hover { color: var(--gold); }
 
   .hero { padding: 96px 0 64px; border-bottom: 1px solid var(--line); }
   .hero .eyebrow { color: var(--moss); font-size: 0.95rem; margin-bottom: 18px; max-width: 30ch; }
   .hero h1 { font-size: clamp(2.1rem, 5vw, 3.4rem); max-width: 16ch; line-height: 1.12; margin-bottom: 22px; }
-  .hero p.lede { font-size: 1.15rem; max-width: 46ch; color: #d7d1c1; margin-bottom: 40px; }
+  .hero p.lede { font-size: 1.15rem; max-width: 46ch; color: #2b3630; margin-bottom: 40px; }
 
   .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px; margin-top: 8px; }
   .stat .num { font-family: 'Fraunces', serif; font-size: 1.9rem; color: var(--gold); }
-  .stat .label { font-size: 0.85rem; color: #b9b3a2; margin-top: 4px; }
+  .stat .label { font-size: 0.85rem; color: #4a5249; margin-top: 4px; }
 
   .belief { padding: 56px 0; border-bottom: 1px solid var(--line); background: var(--forest); }
   .belief p { font-family: 'Fraunces', serif; font-size: 1.5rem; font-weight: 400; max-width: 42ch; line-height: 1.4; }
 
   section.services { padding: 80px 0; }
   .services > .wrap > h2 { font-size: 1.9rem; margin-bottom: 8px; }
-  .services > .wrap > p { color: #b9b3a2; max-width: 52ch; margin-bottom: 44px; }
+  .services > .wrap > p { color: #4a5249; max-width: 52ch; margin-bottom: 44px; }
 
   .cat-label { font-size: 0.85rem; color: var(--gold); margin: 40px 0 16px; }
   .cat-label:first-of-type { margin-top: 0; }
@@ -68,8 +68,8 @@ layout: null
   }
   .card .kind { font-size: 0.8rem; color: var(--moss); }
   .card h3 { font-size: 1.1rem; }
-  .card p { font-size: 0.95rem; color: #cfc9b8; }
-  .card ul { font-size: 0.88rem; color: #b9b3a2; padding-left: 18px; }
+  .card p { font-size: 0.95rem; color: #2b3630; }
+  .card ul { font-size: 0.88rem; color: #4a5249; padding-left: 18px; }
   .card .foot { margin-top: auto; display: flex; justify-content: space-between; align-items: baseline; padding-top: 10px; border-top: 1px solid var(--line); }
   .card .time { font-size: 0.85rem; }
   .card .time b { color: var(--parchment); font-family: 'Fraunces', serif; font-size: 1rem; }
@@ -77,25 +77,25 @@ layout: null
 
   .about { padding: 80px 0; border-top: 1px solid var(--line); background: var(--forest); }
   .about h2 { font-size: 1.9rem; margin-bottom: 24px; max-width: 20ch; }
-  .about .lede { font-size: 1.1rem; color: #d7d1c1; max-width: 56ch; margin-bottom: 20px; }
-  .about p.body { max-width: 62ch; color: #cfc9b8; margin-bottom: 16px; }
+  .about .lede { font-size: 1.1rem; color: #2b3630; max-width: 56ch; margin-bottom: 20px; }
+  .about p.body { max-width: 62ch; color: #2b3630; margin-bottom: 16px; }
 
   .creds { margin-top: 48px; display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; }
   .cred { border-left: 2px solid var(--gold); padding-left: 16px; }
   .cred h4 { font-family: 'Fraunces', serif; font-size: 1.05rem; margin-bottom: 4px; }
-  .cred p { font-size: 0.9rem; color: #b9b3a2; }
+  .cred p { font-size: 0.9rem; color: #4a5249; }
 
   .contact { padding: 80px 0 100px; }
   .contact h2 { font-size: 1.9rem; margin-bottom: 16px; }
-  .contact .lede { color: #cfc9b8; max-width: 52ch; margin-bottom: 40px; }
+  .contact .lede { color: #2b3630; max-width: 52ch; margin-bottom: 40px; }
   .contact-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; margin-bottom: 44px; }
   .contact-grid h4 { font-size: 0.85rem; color: var(--moss); margin-bottom: 8px; }
   .contact-grid p { font-size: 0.95rem; }
   .cta {
-    display: inline-block; background: var(--ember); color: var(--parchment);
+    display: inline-block; background: var(--ember); color: #ffffff;
     padding: 14px 28px; border-radius: 3px; font-size: 0.95rem;
   }
-  footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 0.85rem; color: #8a8474; }
+  footer { border-top: 1px solid var(--line); padding: 28px 0; font-size: 0.85rem; color: #5a6158; }
 
   @media (max-width: 720px) {
     nav ul { display: none; }
@@ -113,10 +113,10 @@ layout: null
     <h1>I help government programs move from surviving to thriving.</h1>
     <p class="lede">So the people who rely on them get something that actually works well. Serotine: the lodgepole pine cone that only opens after fire, built to regenerate what has burned down.</p>
     <div class="stats">
-      <div class="stat"><div class="num">22+</div><div class="label">Years federal service</div></div>
+      <div class="stat"><div class="num">120</div><div class="label">Publishing organizations on Data.gov</div></div>
       <div class="stat"><div class="num">$200M+</div><div class="label">Portfolio as Lead COR, 9 contracts</div></div>
-      <div class="stat"><div class="num">GS-14</div><div class="label">Senior level</div></div>
-      <div class="stat"><div class="num">DITAP</div><div class="label">Certified, 2026</div></div>
+      <div class="stat"><div class="num">15M+</div><div class="label">Recreation.gov users a year</div></div>
+      <div class="stat"><div class="num">DITAP</div><div class="label">Digital IT acquisition certified</div></div>
     </div>
   </div>
 </section>
@@ -136,49 +136,42 @@ layout: null
       <div class="card">
         <div class="kind">Bounded project or retainer</div>
         <h3>Data Catalog &amp; Metadata Engineering</h3>
-        <p>Refactored the DCAT-US 3.0 schema after the original shipped incomplete, with broken links and unresolved agency disagreement. Verified all 26 raw JSON schema files by hand, wrote a Python conversion script for the v1.1 to v3.0 migration, and led the catalog.data.gov cutover from legacy CKAN to a new Python/Flask application.</p>
+        <p>When the DCAT-US 3.0 metadata standard shipped incomplete, with broken links and unresolved agency disagreement, Data.gov proposed the fix and I drove it to completion. Verified all 26 raw JSON schema files by hand, wrote a Python conversion script agencies could use for the v1.1 to v3.0 migration, and led the move of catalog.data.gov from legacy CKAN to a new application, with public betas first and no loss of service.</p>
         <ul><li>Schema design and validation against raw source, not rendered docs</li><li>Migration scripting between metadata versions</li><li>Legacy-to-modern platform cutover</li></ul>
         <div class="foot"><div class="time">Duration<br><b>4 to 8 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
       <div class="card">
         <div class="kind">Bounded project or retainer</div>
         <h3>API Governance &amp; Platform Reliability</h3>
-        <p>Own the Catalog API v4 and Harvester API v2 as the authoritative front door for programmatic data access. Handled a launch-day traffic spike of roughly 400 requests per second with no rate limiting in place, coordinating a fix through api.data.gov.</p>
-        <ul><li>Endpoint governance and versioning strategy</li><li>Usage analytics and capacity planning</li><li>Incident response under live traffic load</li></ul>
-        <div class="foot"><div class="time">Duration<br><b>Variable</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
-      </div>
-      <div class="card">
-        <div class="kind">Retainer</div>
-        <h3>Security Monitoring &amp; Incident Response</h3>
-        <p>Run daily operational security monitoring across AWS and cloud.gov, plus New Relic and Snyk alerting beyond native GitHub scanning. Author of record on a formal Incident Response Plan. Caught a secret key committed to a public repo during a 7-repo security review.</p>
-        <ul><li>Alert triage and vulnerability routing</li><li>Incident Response Plan authorship</li><li>Cross-repo security review</li></ul>
-        <div class="foot"><div class="time">Duration<br><b>Monthly retainer</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
+        <p>Owned the Catalog API v4 and Harvester API v2 as the authoritative front door for programmatic data access. Handled a launch-day traffic spike of roughly 400 requests per second with no rate limiting in place, coordinating a fix through api.data.gov.</p>
+        <ul><li>Endpoint governance and versioning strategy</li><li>Usage analytics and capacity planning</li><li>Monitoring dashboards and keeping leadership informed</li></ul>
+        <div class="foot"><div class="time">Duration<br><b>4 to 12 weeks, or retainer</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
       <div class="card">
         <div class="kind">Bounded project</div>
         <h3>AI-Augmented Operations Engineering</h3>
-        <p>Built and deployed 6 AI-powered helpbots across 4 federal programs in about 2 weeks during a government shutdown, cutting per-ticket resolution time from 10 minutes to 1 minute. Also built a browser-based Q&amp;A tool backed by harvested CSV data and Python error analysis, covering 1,470 errors across 81 sources.</p>
+        <p>Built and deployed 6 AI-powered helpbots across 4 federal programs in about 2 weeks during a government shutdown, cutting per-ticket resolution time from 10 minutes to 1 minute. Also built a browser-based Q&amp;A tool backed by harvested CSV data and Python error analysis, covering 1,470 errors across 81 sources, and an AI-built automation guide that turns a new daily reporting requirement into less than a minute of work for staff.</p>
         <ul><li>Custom AI tooling design and deployment</li><li>Data-backed error analysis scripting</li><li>Tier-based support workflow integration</li></ul>
         <div class="foot"><div class="time">Duration<br><b>2 to 4 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
       <div class="card">
         <div class="kind">Bounded project</div>
         <h3>Legacy System Migration</h3>
-        <p>Led the Search.gov migration off legacy search technology, and the catalog.data.gov cutover from CKAN, each while keeping the outgoing system running for dependent users through the transition.</p>
+        <p>Moved catalog.data.gov from legacy CKAN to a new application through staged public betas, and planned Search.gov's move off its paid legacy search service and saw it implemented fully, each while keeping the outgoing system running for the people who depended on it.</p>
         <ul><li>Dual-track legacy and modern platform operation</li><li>Cutover sequencing and rollback planning</li><li>Dependent-user continuity through transition</li></ul>
-        <div class="foot"><div class="time">Duration<br><b>Variable</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
+        <div class="foot"><div class="time">Duration<br><b>2 to 6 months</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
       <div class="card">
         <div class="kind">Bounded project or retainer</div>
         <h3>Technical Acquisition &amp; Contract Structuring</h3>
-        <p>Draft SOO/SOW/PWS documents scoped to actual technical architecture, not boilerplate. Restructured an hours-based BPA across six interagency call orders into a quality-weighted incentive and disincentive pricing model. COR-level oversight of $200M+ in technical program spend across three active contract vehicles.</p>
+        <p>Draft SOO/SOW/PWS documents scoped to actual technical architecture, not boilerplate. Restructured an hours-based BPA across six interagency call orders into a quality-weighted incentive and disincentive pricing model. As Lead COR, oversaw 9 contracts totaling $200M+, and worked with legal counsel on a contract change that closed a $700,000 cost gap between two vendors' agreements.</p>
         <ul><li>Technically-scoped SOW/PWS drafting</li><li>Incentive-based pricing structure design</li><li>Multi-vehicle contractor coordination</li></ul>
         <div class="foot"><div class="time">Duration<br><b>3 to 5 weeks</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
       <div class="card">
         <div class="kind">Retainer</div>
         <h3>Delivery &amp; Vendor Management</h3>
-        <p>Absorbed an emergency COR-3 takeover during a 5-month stretch of PM and partner turnover on Search.gov, restructured an hours-based BPA across six interagency call orders into a quality-weighted incentive and disincentive model, and delivered roughly $1M in contract consolidation savings. Reduced a 400+ ticket O&amp;M backlog to a steady-state of around 100.</p>
+        <p>Absorbed an emergency COR-3 takeover during a 5-month stretch of PM and partner turnover on Search.gov, and delivered roughly $1M in contract consolidation savings. Brought two contract teams from different firms together into one team with a shared backlog, kept a 500-agent contact center's task orders funded for full years, and reduced a 400+ ticket O&amp;M backlog to a steady state of around 100.</p>
         <ul><li>Active management of 3+ concurrent vendor contracts</li><li>Blocker removal across contractual and technical obstacles</li><li>Outcome-based contract performance review</li></ul>
         <div class="foot"><div class="time">Duration<br><b>Monthly retainer</b></div><div class="inquire"><a href="#contact">Inquire</a></div></div>
       </div>
@@ -190,16 +183,16 @@ layout: null
   <div class="wrap">
     <h2>The person you call when the system itself needs to thrive</h2>
     <p class="lede">Some programs get stuck at the architecture level: a schema nobody agreed on, an API with no rate limiting, a legacy system nobody's willing to touch. That's where I do my best work: refactoring the actual technical thing, not just the process around it.</p>
-    <p class="body">I hold official ownership of Data.gov's metadata and API layer: the DCAT-US 3.0 schema, the catalog.data.gov cutover from CKAN to Python/Flask, the Catalog and Harvester APIs. As Lead COR, I also manage a $200M+ portfolio across nine contracts, including Data.gov, the PX Contact Center, Search.gov, and Vote.gov, so I can write a SOW that reflects real engineering scope, not boilerplate. Over 22+ years, I have led platform modernizations serving millions of users and rebuilt operations during federal crises using AI tooling I built myself.</p>
+    <p class="body">At GSA, I led delivery for Data.gov's metadata and API layer: the DCAT-US 3.0 standard, the move of catalog.data.gov off legacy CKAN, and the Catalog and Harvester APIs. As Lead COR, I managed a $200M+ portfolio across nine contracts, including Data.gov, the PX Contact Center, Search.gov, and Vote.gov, so I can write a SOW that reflects real engineering scope, not boilerplate. Across my federal career, I have led platform modernizations serving millions of users, delivered a Data.gov training series at OMB's request that reached more than 300 people in one session, and kept operations running during federal crises using AI tooling I built myself.</p>
     <p class="body">This is not limited to government work performed directly. I also partner as a subcontractor on larger federal contract vehicles, bringing technical depth to primes who need it beyond process facilitation. I figure out what the system actually needs, build it, and make sure it keeps running after I leave.</p>
 
     <div class="creds">
       <div class="cred"><h4>Lead COR, $200M+ Portfolio</h4><p>Nine contracts spanning Data.gov, PX Contact Center, Search.gov, and Vote.gov</p></div>
-      <div class="cred"><h4>MS, Organizational Leadership</h4><p>IT Program Management focus. Distinguished Scholar, CSU Global, 2025</p></div>
+      <div class="cred"><h4>MS, Organizational Leadership</h4><p>IT Program Management focus. 4.0 GPA, Distinguished Scholar, CSU Global</p></div>
       <div class="cred"><h4>FAC-P/PM Senior Level III</h4><p>Federal Acquisition Certification in Program and Project Management</p></div>
       <div class="cred"><h4>Senior Level III COR</h4><p>Contracting Officer Representative Certification</p></div>
-      <div class="cred"><h4>DITAP Certified, 2026</h4><p>Digital IT Acquisition Professional Program</p></div>
-      <div class="cred"><h4>CSPO, 2026</h4><p>Certified Scrum Product Owner</p></div>
+      <div class="cred"><h4>DITAP Certified</h4><p>Digital IT Acquisition Professional Program</p></div>
+      <div class="cred"><h4>CSPO</h4><p>Certified Scrum Product Owner</p></div>
     </div>
   </div>
 </section>
@@ -209,9 +202,9 @@ layout: null
     <h2>Let's discuss what you're trying to grow</h2>
     <p class="lede">Available for government, nonprofit, and private sector engagements, as prime or sub. Flexible models include hourly, project-based, and retainer. Remote-first.</p>
     <div class="contact-grid">
-      <div><h4>Email</h4><p>sue@serotineservices.com</p><p style="color:#8a8474; font-size:0.85rem; margin-top:4px;">Responses within one business day</p></div>
-      <div><h4>Availability</h4><p>Open to new engagements</p><p style="color:#8a8474; font-size:0.85rem; margin-top:4px;">Bounded projects and retainers</p></div>
-      <div><h4>Location</h4><p>Colorado</p><p style="color:#8a8474; font-size:0.85rem; margin-top:4px;">Remote-first, travel available</p></div>
+      <div><h4>Email</h4><p>sue@serotineservices.com</p><p style="color:#5a6158; font-size:0.85rem; margin-top:4px;">Responses within one business day</p></div>
+      <div><h4>Availability</h4><p>Open to new engagements</p><p style="color:#5a6158; font-size:0.85rem; margin-top:4px;">Bounded projects and retainers</p></div>
+      <div><h4>Location</h4><p>Colorado</p><p style="color:#5a6158; font-size:0.85rem; margin-top:4px;">Remote-first, travel available</p></div>
     </div>
     <a class="cta" href="mailto:sue@serotineservices.com">Start a Conversation</a>
   </div>
